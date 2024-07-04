@@ -1,0 +1,1 @@
+insert into Alien (aid, aname) values (105, 'Rohith')
