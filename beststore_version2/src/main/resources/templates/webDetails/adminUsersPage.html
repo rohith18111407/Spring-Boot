@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Users Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+		 /* navbar */
+
+		.head{
+		    display: flex;
+		    align-items: center;
+		    justify-content: space-between;
+		    flex-wrap: wrap;
+		}
+		
+		/*
+		#logout-button{
+				margin-left: 800px;
+			}
+		*/
+			
+		header{
+		    background-color: whitesmoke;
+		}
+
+		nav ul li{
+		    display: inline-block;     /*horizontally aligned */
+		    list-style: none;
+		    margin: 10px 20px;          /*space b/w each link */
+		}
+		
+		nav ul li a{
+		    color:purple;
+		    text-decoration: none;
+		    font-size: 18px;
+		    position:relative;
+		}
+		
+		nav ul li a::after{             /*creates a style line below the menu*/
+		    content:'';
+		    width:0;                    /*initially invisible without hover*/
+		    height:3px;
+		    background: purple;
+		    position: absolute;
+		    left:0px;
+		    bottom: -6px;
+		    transition: 0.5s;
+		}
+		
+		nav ul li a:hover::after{
+		    width: 100%;
+		}
+			
+			header{
+				text-align: center;
+		   		 margin: 20px;
+			}	  
+				  
+				  
+				/* Resetting default styles and setting basic font */
+		body {
+		    font-family: "Sansita Swashed", cursive;
+		    font-weight: bold;
+		    background-image: url('https://media.licdn.com/dms/image/C511BAQE4hH2p_6ZYiA/company-background_10000/0/1584461336941?e=2147483647&v=beta&t=a5YZyldpxzDc0RJpu9H9bBYyW7--icYPDDVxHspNe14');
+		    background-repeat: no-repeat;
+		    background-size: cover;
+		}
+		
+		/* Styling for the container holding the table */
+		.container {
+		  max-width: 80%; /* Limit container width */
+		  margin: 20px auto; /* Center container horizontally */
+		  background-color: whitesmoke; /* White background for container */
+		  padding: 20px; /* Add padding inside container */
+		  border-radius: 8px; /* Rounded corners for container */
+		  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+		}
+		
+		/* Styling for the main heading */
+		h1 {
+		  text-align: center; /* Center-align heading text */
+		  color: red; /* Dark gray text color */
+		}
+		
+		/* Styling for the table */
+		.table {
+		  width: 100%; /* Full width of the container */
+		  border-collapse: collapse; /* Collapse borders between table cells */
+		  margin: 20px 0; /* Margin above and below the table */
+		}
+		
+		/* Styling for table headers and cells */
+		.table th,
+		.table td {
+		  padding: 12px 15px; /* Padding inside table cells */
+		  text-align: center; /* Center-align text in cells */
+		}
+		
+		/* Styling for table header row */
+		.table th {
+		  background-color: white; /* Blue background color for header */
+		  color:purple; /* White text color for header */
+		  border-bottom: 2px solid #ddd; /* Bottom border with light gray color */
+		}
+		
+		/* Styling for table data rows */
+		.table td {
+		  background-color: #f2f2f2; /* Light gray background color for data rows */
+		  border-bottom: 1px solid #ddd; /* Bottom border with lighter gray color */
+		}
+		
+		/* Hover effect for table rows */
+		.table tbody tr:hover {
+		  background-color: #e0e0e0; /* Lighter gray background color on hover */
+		}
+		
+	</style>
+    
+</head>
+<body>
+	
+	<!-- navbar -->
+        <header class="head">
+            <nav>
+                
+                <ul>
+                    <li><a href="/admin/about">About</a></li>
+                    <li><a href="/admin/jpa/products">Products</a></li>
+                    <li><a href="/admin/contact">Contact</a></li>
+                    <li><a href="/admin/users">Users</a></li> <!-- Admin-only link -->
+                    <li id="logout-button"><a href="/logout">Logout</a></li>
+                    <!--
+                    <li><span th:text="${username}"></span></li> <!-- Display username -->
+                    
+
+                </ul>
+            </nav>
+        </header>
+        
+     <div class="container">
+		 <h1>List of Users</h1>
+    
+	    <table border="1" class="table">
+	        <thead>
+	            <tr>					
+		            <th>Username</th>
+	                <th>Password (hashed)</th>
+	                <th>Role</th>
+	                <th>Options</th>
+	            </tr>
+	        </thead>
+	        <tbody>
+	            <!-- Loop through users and display information -->
+	            <tr th:each="user : ${users}">
+										
+	                <td th:text="${user.username}">Username</td>
+	                <td th:text="${user.password}">Password</td>
+	                <td th:text="${user.authorities}">Role</td>
+	                <td style="white-space:nowrap">
+						<a class="btn btn-danger btn-sm"
+							th:href="@{/admin/users/remove(username=${user.username})}"
+							onclick="return confirm('Are you sure?')">Remove</a>
+					</td>
+	            </tr>
+	        </tbody>
+	    </table>
+	 </div>
+	
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
