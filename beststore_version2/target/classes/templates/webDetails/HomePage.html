@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Store Application</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-image: url('https://media.licdn.com/dms/image/C511BAQE4hH2p_6ZYiA/company-background_10000/0/1584461336941?e=2147483647&v=beta&t=a5YZyldpxzDc0RJpu9H9bBYyW7--icYPDDVxHspNe14');
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: "Sansita Swashed", cursive;
+    }
+    .carousel-item img {
+      width: 80%; /* Adjust width as needed */
+      height: auto; /* Maintain aspect ratio */
+      margin: auto; /* Center align images */
+      border-radius: 8px;
+    }
+    .whitebox {
+      background-color: whitesmoke;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .whitebox h1, .whitebox h2, .whitebox h3 {
+      color: purple;
+      font-weight: bold;
+    }
+    .whitebox p {
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Main Content -->
+<center>
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="whitebox text-center">
+          <h1><span style="color: darkgoldenrod;">World's Best Store</span></h1>
+          <h2>Your destination for premium products</h2>
+          <p>Unleash Your Shopping Experience</p>
+          
+          <!-- Bootstrap Carousel -->
+          <div id="myCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+            <div class="carousel-inner">
+              <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/356056/pexels-photo-356056.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Laptop">
+              </div>
+              <div class="carousel-item active">
+                <img src="https://images.pexels.com/photos/4158/apple-iphone-smartphone-desk.jpg?auto=compress&cs=tinysrgb&w=600" alt="Mobile">
+              </div>
+              <div class="carousel-item">
+                <img src="https://images.pexels.com/photos/389819/pexels-photo-389819.jpeg?auto=compress&cs=tinysrgb&w=600" alt="New York">
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </a>
+          </div>
+
+          <p style="color: darkgoldenrod;">Products: Smartphones, Laptops, Desktops, Accessories</p>
+          <div class="mt-4">
+            <a class="btn btn-success me-3" href="/login" role="button">Login</a>
+            <a class="btn btn-success" href="/register" role="button">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</center>
+<br/>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
