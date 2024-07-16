@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Error</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .error-container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            color: red;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .home-link {
+            display: block;
+            margin-top: 20px;
+            text-decoration: none;
+            background-color: #065e2ff6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .home-link:hover {
+            background-color: #1A2C81;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>Error: Person Already Registered</h1>
+        <p>The person you are trying to register is already in the system.</p>
+        <a href="/register" class="home-link">Go to Home Page</a>
+    </div>
+</body>
+</html>
